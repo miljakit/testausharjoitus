@@ -54,9 +54,13 @@ with pytest.raises(ValueError):
         ([18, 18, 18, 18, 18, 18, 18, 18, 18, 18], 135),
     ],
 )
-
 def test_kokonaishinta(iat, odotettu_hinta):
     assert kokonaishinta(iat) == odotettu_hinta
+
+
+def test_opiskelija_hinta():
+    assert lippuhinta(20, opiskelija=True) == 10.0
+    assert lippuhinta(64, opiskelija=True) == 10.0
 
 
 """ def test_lippuhinta(ika, odotettu_hinta):
